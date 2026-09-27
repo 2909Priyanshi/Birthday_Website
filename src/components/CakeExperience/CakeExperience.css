@@ -1,0 +1,626 @@
+.cake-experience {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    overflow: hidden;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    padding: 2rem 1rem;
+  
+    background:
+      radial-gradient(
+        circle at 50% 40%,
+        rgba(255, 45, 149, 0.16),
+        transparent 38%
+      ),
+      radial-gradient(
+        circle at 20% 80%,
+        rgba(180, 74, 255, 0.12),
+        transparent 35%
+      ),
+      #050508;
+  
+    color: #f7f2ff;
+  
+    animation: cake-enter 0.6s ease both;
+  }
+  
+  .cake-experience__ambient {
+    position: absolute;
+    inset: 0;
+  
+    background:
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 45, 149, 0.06),
+        transparent 50%
+      );
+  
+    pointer-events: none;
+  }
+  
+  .cake-experience__content {
+    position: relative;
+    z-index: 10;
+  
+    width: min(100%, 650px);
+  
+    text-align: center;
+  }
+  
+  .cake-experience__eyebrow {
+    margin: 0 0 0.6rem;
+  
+    color: #ff78bc;
+  
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  
+  .cake-experience__title {
+    margin: 0;
+  
+    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  
+    text-shadow:
+      0 0 18px rgba(255, 45, 149, 0.45),
+      0 0 45px rgba(180, 74, 255, 0.25);
+  }
+  
+  .cake-experience__subtitle {
+    margin: 1rem auto 0;
+  
+    max-width: 480px;
+  
+    color: rgba(247, 242, 255, 0.68);
+  
+    line-height: 1.65;
+  }
+  
+  .cake-experience__close {
+    position: absolute;
+  
+    top: 1.2rem;
+    right: 1.2rem;
+  
+    z-index: 50;
+  
+    width: 44px;
+    height: 44px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+  
+    color: white;
+  
+    background: rgba(255, 255, 255, 0.06);
+  
+    font-size: 1.7rem;
+  
+    cursor: pointer;
+  
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease;
+  }
+  
+  .cake-experience__close:hover {
+    transform: rotate(90deg);
+  
+    background: rgba(255, 45, 149, 0.15);
+  }
+  
+  /* Cake */
+  
+  .cake-scene {
+    position: relative;
+  
+    width: 330px;
+    height: 270px;
+  
+    margin: 1.5rem auto 0;
+  }
+  
+  .cake {
+    position: absolute;
+  
+    left: 50%;
+    bottom: 25px;
+  
+    width: 250px;
+    height: 150px;
+  
+    transform: translateX(-50%);
+  }
+  
+  .cake__plate {
+    position: absolute;
+  
+    left: 50%;
+    bottom: 0;
+  
+    width: 290px;
+    height: 18px;
+  
+    border-radius: 50%;
+  
+    background: linear-gradient(
+      to bottom,
+      #f7c7e8,
+      #b44aff
+    );
+  
+    box-shadow:
+      0 0 20px rgba(180, 74, 255, 0.35);
+  
+    transform: translateX(-50%);
+  }
+  
+  .cake__body {
+    position: absolute;
+  
+    left: 50%;
+    bottom: 15px;
+  
+    width: 230px;
+    height: 105px;
+  
+    overflow: hidden;
+  
+    border-radius: 14px 14px 22px 22px;
+  
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.12),
+        transparent 25%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 75%
+      ),
+      linear-gradient(
+        145deg,
+        #ff62b3,
+        #d43f9c 50%,
+        #9c46d8
+      );
+  
+    box-shadow:
+      0 8px 30px rgba(255, 45, 149, 0.25);
+  
+    transform: translateX(-50%);
+  }
+  
+  .cake__shine {
+    position: absolute;
+  
+    top: 15px;
+    left: 20px;
+  
+    width: 12px;
+    height: 65px;
+  
+    border-radius: 50%;
+  
+    background: rgba(255, 255, 255, 0.18);
+  
+    transform: rotate(15deg);
+  }
+  
+  .cake__decoration {
+    position: absolute;
+  
+    left: 50%;
+    bottom: 22px;
+  
+    width: 100%;
+  
+    color: rgba(255, 255, 255, 0.7);
+  
+    font-size: 0.9rem;
+  
+    transform: translateX(-50%);
+  }
+  
+  .cake__cream {
+    position: absolute;
+  
+    left: 50%;
+    bottom: 112px;
+  
+    width: 235px;
+    height: 30px;
+  
+    transform: translateX(-50%);
+  
+    border-radius: 50%;
+  
+    background: #fff0fa;
+  
+    box-shadow:
+      0 0 15px rgba(255, 240, 250, 0.3);
+  }
+  
+  .cake__cream span {
+    position: absolute;
+  
+    bottom: -9px;
+  
+    width: 25px;
+    height: 20px;
+  
+    border-radius: 0 0 50% 50%;
+  
+    background: #fff0fa;
+  }
+  
+  .cake__cream span:nth-child(1) {
+    left: 30px;
+  }
+  
+  .cake__cream span:nth-child(2) {
+    left: 105px;
+  }
+  
+  .cake__cream span:nth-child(3) {
+    right: 30px;
+  }
+  
+  .cake__top {
+    position: absolute;
+  
+    left: 50%;
+    bottom: 130px;
+  
+    width: 220px;
+    height: 25px;
+  
+    border-radius: 50%;
+  
+    background: #ffd5ed;
+  
+    transform: translateX(-50%);
+  
+    box-shadow:
+      0 0 15px rgba(255, 45, 149, 0.2);
+  }
+  
+  .cake__top span {
+    position: absolute;
+  
+    width: 7px;
+    height: 7px;
+  
+    border-radius: 50%;
+  
+    background: #b44aff;
+  }
+  
+  .cake__top span:nth-child(1) {
+    left: 45px;
+    top: 8px;
+  }
+  
+  .cake__top span:nth-child(2) {
+    left: 105px;
+    top: 5px;
+  }
+  
+  .cake__top span:nth-child(3) {
+    right: 45px;
+    top: 9px;
+  }
+  
+  /* Candles */
+  
+  .cake-candles {
+    position: absolute;
+  
+    left: 50%;
+    bottom: 151px;
+  
+    z-index: 5;
+  
+    width: 190px;
+    height: 85px;
+  
+    transform: translateX(-50%);
+  }
+  
+  .cake-candle {
+    position: absolute;
+  
+    bottom: 0;
+  
+    width: 24px;
+    height: 75px;
+  
+    padding: 0;
+  
+    border: 0;
+  
+    background: transparent;
+  
+    cursor: pointer;
+  }
+  
+  .cake-candle:nth-child(1) {
+    left: 5px;
+  }
+  
+  .cake-candle:nth-child(2) {
+    left: 48px;
+  }
+  
+  .cake-candle:nth-child(3) {
+    left: 84px;
+  }
+  
+  .cake-candle:nth-child(4) {
+    left: 120px;
+  }
+  
+  .cake-candle:nth-child(5) {
+    left: 163px;
+  }
+  
+  .cake-candle__stick {
+    position: absolute;
+  
+    left: 50%;
+    bottom: 0;
+  
+    width: 17px;
+    height: 58px;
+  
+    border-radius: 5px;
+  
+    background:
+      repeating-linear-gradient(
+        135deg,
+        #ff75ba 0 7px,
+        #fff0fa 7px 13px
+      );
+  
+    transform: translateX(-50%);
+  
+    box-shadow:
+      0 0 8px rgba(255, 45, 149, 0.3);
+  }
+  
+  .cake-candle__flame {
+    position: absolute;
+  
+    left: 50%;
+    top: -7px;
+  
+    width: 18px;
+    height: 28px;
+  
+    border-radius: 50% 50% 50% 50%;
+  
+    background:
+      radial-gradient(
+        circle at 50% 70%,
+        #fff,
+        #ffe26f 35%,
+        #ff8a3d 70%,
+        transparent 71%
+      );
+  
+    transform: translateX(-50%);
+  
+    filter: drop-shadow(
+      0 0 8px rgba(255, 181, 58, 0.9)
+    );
+  
+    animation: flame-flicker 0.7s ease-in-out infinite alternate;
+  }
+  
+  .cake-candle--out .cake-candle__stick {
+    opacity: 0.65;
+  
+    filter: grayscale(0.3);
+  }
+  
+  .cake-candle--out {
+    cursor: default;
+  }
+  
+  /* Buttons */
+  
+  .cake-actions {
+    margin-top: 0.3rem;
+  }
+  
+  .cake-actions__status {
+    margin: 0 0 0.8rem;
+  
+    color: rgba(247, 242, 255, 0.55);
+  
+    font-size: 0.82rem;
+  }
+  
+  .cake-actions__wish,
+  .cake-actions__reset {
+    border: 1px solid rgba(255, 45, 149, 0.4);
+    border-radius: 999px;
+  
+    padding: 0.85rem 1.5rem;
+  
+    color: white;
+  
+    background: rgba(255, 45, 149, 0.08);
+  
+    font: inherit;
+    font-weight: 700;
+  
+    cursor: pointer;
+  
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .cake-actions__wish:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  
+  .cake-actions__wish--active {
+    background: rgba(255, 45, 149, 0.2);
+  
+    box-shadow:
+      0 0 25px rgba(255, 45, 149, 0.3);
+  }
+  
+  .cake-actions__wish--active:hover,
+  .cake-actions__reset:hover {
+    transform: translateY(-2px);
+  
+    background: rgba(255, 45, 149, 0.28);
+  }
+  
+  .cake-actions__reset {
+    margin-top: 1.2rem;
+  }
+  
+  /* Wish celebration */
+  
+  .cake-experience__wish-icon {
+    margin-bottom: 0.5rem;
+  
+    font-size: 3.5rem;
+  
+    animation: wish-glow 1.5s ease-in-out infinite;
+  }
+  
+  /* Confetti */
+  
+  .cake-confetti {
+    position: absolute;
+    inset: 0;
+  
+    z-index: 30;
+  
+    pointer-events: none;
+  }
+  
+  .cake-confetti span {
+    position: absolute;
+  
+    top: -30px;
+    left: var(--confetti-left);
+  
+    color: #ff78bc;
+  
+    font-size: 1.3rem;
+  
+    text-shadow:
+      0 0 12px rgba(255, 45, 149, 0.8);
+  
+    animation:
+      confetti-fall 3s ease-in
+      var(--confetti-delay) forwards;
+  
+    transform: rotate(var(--confetti-rotation));
+  }
+  
+  /* Animations */
+  
+  @keyframes cake-enter {
+    from {
+      opacity: 0;
+      transform: scale(1.03);
+    }
+  
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes flame-flicker {
+    from {
+      transform: translateX(-50%) scale(0.9) rotate(-3deg);
+    }
+  
+    to {
+      transform: translateX(-50%) scale(1.08) rotate(3deg);
+    }
+  }
+  
+  @keyframes wish-glow {
+    0%,
+    100% {
+      transform: scale(1);
+      filter: drop-shadow(
+        0 0 8px rgba(255, 45, 149, 0.4)
+      );
+    }
+  
+    50% {
+      transform: scale(1.12);
+      filter: drop-shadow(
+        0 0 25px rgba(255, 45, 149, 0.8)
+      );
+    }
+  }
+  
+  @keyframes confetti-fall {
+    from {
+      top: -30px;
+      opacity: 1;
+    }
+  
+    to {
+      top: 110%;
+      opacity: 0;
+    }
+  }
+  
+  /* Mobile */
+  
+  @media (max-width: 600px) {
+    .cake-experience {
+      padding: 1rem;
+    }
+  
+    .cake-experience__content {
+      padding-top: 1rem;
+    }
+  
+    .cake-experience__title {
+      font-size: clamp(2.2rem, 11vw, 3.5rem);
+    }
+  
+    .cake-experience__subtitle {
+      font-size: 0.88rem;
+    }
+  
+    .cake-scene {
+      transform: scale(0.82);
+      margin-top: 0.2rem;
+      margin-bottom: -25px;
+    }
+  
+    .cake-experience__close {
+      top: 0.8rem;
+      right: 0.8rem;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .cake-experience,
+    .cake-candle__flame,
+    .cake-experience__wish-icon {
+      animation: none;
+    }
+  }

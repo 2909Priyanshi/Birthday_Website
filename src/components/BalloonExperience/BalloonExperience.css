@@ -1,0 +1,314 @@
+.balloon-experience {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    overflow: hidden;
+  
+    background:
+      radial-gradient(
+        circle at 50% 40%,
+        rgba(255, 45, 149, 0.18),
+        transparent 40%
+      ),
+      #050508;
+  
+    color: #fff;
+  }
+  
+  .balloon-experience__content {
+    position: relative;
+    z-index: 20;
+  
+    width: min(90%, 600px);
+    margin: 0 auto;
+  
+    padding-top: 5rem;
+  
+    text-align: center;
+  
+    pointer-events: none;
+  }
+  
+  .balloon-experience__eyebrow {
+    margin: 0 0 0.6rem;
+  
+    color: #ff78bc;
+  
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  
+  .balloon-experience__title {
+    margin: 0;
+  
+    font-size: clamp(2.3rem, 7vw, 4.5rem);
+    line-height: 1;
+  
+    text-shadow:
+      0 0 20px rgba(255, 45, 149, 0.5),
+      0 0 50px rgba(180, 74, 255, 0.3);
+  }
+  
+  .balloon-experience__subtitle {
+    margin: 1rem auto;
+  
+    max-width: 450px;
+  
+    color: rgba(255, 255, 255, 0.65);
+  
+    line-height: 1.6;
+  }
+  
+  .balloon-experience__counter {
+    margin-top: 1rem;
+  
+    color: #ff78bc;
+  
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  
+  .balloon-experience__balloons {
+    position: absolute;
+    inset: 0;
+  
+    z-index: 10;
+  
+    overflow: hidden;
+  
+    pointer-events: none;
+  }
+  
+  .birthday-balloon {
+    position: absolute;
+  
+    bottom: -180px;
+  
+    width: 75px;
+    height: 120px;
+  
+    padding: 0;
+  
+    border: none;
+  
+    background: transparent;
+  
+    cursor: pointer;
+  
+    pointer-events: auto;
+  
+    animation: balloon-float 8s linear infinite;
+  }
+  
+  .birthday-balloon__shape {
+    position: absolute;
+  
+    top: 0;
+    left: 50%;
+  
+    width: 65px;
+    height: 82px;
+  
+    transform: translateX(-50%);
+  
+    border-radius: 50% 50% 48% 48%;
+  
+    background:
+      radial-gradient(
+        circle at 28% 22%,
+        white,
+        transparent 10%
+      ),
+      linear-gradient(
+        145deg,
+        #ff75ba,
+        #ff2d95 55%,
+        #a94aff
+      );
+  
+    box-shadow:
+      0 0 15px rgba(255, 45, 149, 0.7),
+      0 0 35px rgba(180, 74, 255, 0.4);
+  
+    transition: transform 0.15s ease;
+  }
+  
+  .birthday-balloon:hover .birthday-balloon__shape {
+    transform: translateX(-50%) scale(1.1);
+  }
+  
+  .birthday-balloon:active .birthday-balloon__shape {
+    transform: translateX(-50%) scale(0.85);
+  }
+  
+  .birthday-balloon__shine {
+    position: absolute;
+  
+    top: 14px;
+    left: 17px;
+  
+    width: 9px;
+    height: 20px;
+  
+    border-radius: 50%;
+  
+    background: rgba(255, 255, 255, 0.65);
+  
+    transform: rotate(20deg);
+  }
+  
+  .birthday-balloon__knot {
+    position: absolute;
+  
+    top: 80px;
+    left: 50%;
+  
+    width: 10px;
+    height: 10px;
+  
+    background: #df298c;
+  
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      50% 100%
+    );
+  
+    transform: translateX(-50%);
+  }
+  
+  .birthday-balloon__string {
+    position: absolute;
+  
+    top: 88px;
+    left: 50%;
+  
+    width: 1px;
+    height: 100px;
+  
+    background: rgba(255, 255, 255, 0.35);
+  
+    transform: translateX(-50%);
+  }
+  
+  .birthday-balloon--still {
+    bottom: 8%;
+  
+    animation: none;
+  }
+  
+  .balloon-experience__close {
+    position: absolute;
+  
+    top: 1rem;
+    right: 1rem;
+  
+    z-index: 50;
+  
+    width: 44px;
+    height: 44px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+  
+    color: white;
+  
+    background: rgba(255, 255, 255, 0.07);
+  
+    font-size: 1.6rem;
+  
+    cursor: pointer;
+  }
+  
+  .balloon-experience__hint {
+    position: absolute;
+  
+    bottom: 1.5rem;
+    left: 50%;
+  
+    z-index: 20;
+  
+    margin: 0;
+  
+    color: rgba(255, 255, 255, 0.45);
+  
+    font-size: 0.8rem;
+  
+    transform: translateX(-50%);
+  }
+  
+  .balloon-experience__celebration {
+    margin-bottom: 1rem;
+  
+    font-size: 4rem;
+  }
+  
+  .balloon-experience__reset {
+    margin-top: 1rem;
+  
+    padding: 0.85rem 1.5rem;
+  
+    border: 1px solid rgba(255, 45, 149, 0.5);
+    border-radius: 999px;
+  
+    color: white;
+  
+    background: rgba(255, 45, 149, 0.15);
+  
+    font: inherit;
+    font-weight: 700;
+  
+    cursor: pointer;
+  
+    pointer-events: auto;
+  }
+  
+  @keyframes balloon-float {
+    0% {
+      bottom: -180px;
+      transform: translateX(0);
+    }
+  
+    25% {
+      transform: translateX(35px);
+    }
+  
+    50% {
+      transform: translateX(-30px);
+    }
+  
+    75% {
+      transform: translateX(25px);
+    }
+  
+    100% {
+      bottom: 110%;
+      transform: translateX(-20px);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .balloon-experience__content {
+      padding-top: 5rem;
+    }
+  
+    .birthday-balloon {
+      width: 65px;
+      height: 110px;
+    }
+  
+    .birthday-balloon__shape {
+      width: 58px;
+      height: 75px;
+    }
+  
+    .birthday-balloon__knot {
+      top: 73px;
+    }
+  
+    .birthday-balloon__string {
+      top: 81px;
+    }
+  }

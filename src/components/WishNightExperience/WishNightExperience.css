@@ -1,0 +1,476 @@
+.wish-night {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+  
+    overflow: hidden;
+  
+    background:
+      radial-gradient(
+        circle at 50% 35%,
+        rgba(92, 48, 150, 0.3),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at 20% 80%,
+        rgba(255, 45, 149, 0.1),
+        transparent 30%
+      ),
+      linear-gradient(
+        180deg,
+        #02020a,
+        #080316 55%,
+        #12051b
+      );
+  
+    color: white;
+  }
+  
+  /* MOON */
+  
+  .wish-night__moon {
+    position: absolute;
+  
+    top: 10%;
+    right: 12%;
+  
+    width: 110px;
+    height: 110px;
+  
+    border-radius: 50%;
+  
+    background:
+      radial-gradient(
+        circle at 35% 30%,
+        #fff,
+        #e8d9ff 55%,
+        #a88bcf
+      );
+  
+    box-shadow:
+      0 0 30px rgba(225, 210, 255, 0.6),
+      0 0 80px rgba(180, 120, 255, 0.2);
+  }
+  
+  .wish-night__moon-shadow {
+    position: absolute;
+  
+    top: 10px;
+    left: 25px;
+  
+    width: 25px;
+    height: 25px;
+  
+    border-radius: 50%;
+  
+    background: rgba(130, 100, 170, 0.18);
+  
+    box-shadow:
+      35px 40px 0 rgba(130, 100, 170, 0.15),
+      15px 65px 0 rgba(130, 100, 170, 0.12);
+  }
+  
+  /* STARS */
+  
+  .wish-night__stars {
+    position: absolute;
+    inset: 0;
+  }
+  
+  .wish-night__star {
+    position: absolute;
+  
+    width: 7px;
+    height: 7px;
+  
+    border-radius: 50%;
+  
+    background: white;
+  
+    box-shadow:
+      0 0 8px white,
+      0 0 18px #d889ff;
+  
+    cursor: pointer;
+  
+    animation: star-twinkle 2.5s ease-in-out infinite;
+  }
+  
+  .wish-night__star::before {
+    content: '';
+  
+    position: absolute;
+  
+    inset: -12px;
+  
+    border-radius: 50%;
+  
+    background: rgba(255, 255, 255, 0.03);
+  }
+  
+  .wish-night__star:hover {
+    transform: scale(2);
+  
+    box-shadow:
+      0 0 12px white,
+      0 0 30px #ff4da6;
+  }
+  
+  .wish-night__star--selected {
+    width: 12px;
+    height: 12px;
+  
+    background: #ff78bc;
+  
+    box-shadow:
+      0 0 15px white,
+      0 0 35px #ff2d95,
+      0 0 65px #b44aff;
+  
+    animation: selected-star 1s ease-in-out infinite;
+  }
+  
+  /* CONTENT */
+  
+  .wish-night__content {
+    position: relative;
+    z-index: 20;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    width: min(90%, 600px);
+  
+    height: 100%;
+  
+    margin: 0 auto;
+    padding-top: 12vh;
+  
+    text-align: center;
+  }
+  
+  .wish-night__eyebrow {
+    margin: 0 0 0.7rem;
+  
+    color: #ff78bc;
+  
+    font-size: 0.75rem;
+    font-weight: 700;
+  
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  
+  .wish-night__title {
+    margin: 0;
+  
+    font-size: clamp(2.6rem, 8vw, 5rem);
+    line-height: 1;
+  
+    text-shadow:
+      0 0 20px rgba(255, 45, 149, 0.45),
+      0 0 60px rgba(180, 74, 255, 0.35);
+  }
+  
+  .wish-night__subtitle,
+  .wish-night__message {
+    margin: 1rem auto;
+  
+    color: rgba(255, 255, 255, 0.65);
+  
+    line-height: 1.7;
+  }
+  
+  .wish-night__message {
+    max-width: 470px;
+  
+    color: rgba(255, 255, 255, 0.82);
+  
+    font-size: 1.05rem;
+  }
+  
+  .wish-night__final-message {
+    max-width: 480px;
+  
+    margin: 0.5rem auto 1.5rem;
+  
+    color: #ffb5d8;
+  
+    line-height: 1.7;
+  }
+  
+  /* WISH INPUT */
+  
+  .wish-night__wish-area {
+    position: relative;
+  
+    width: min(100%, 470px);
+  
+    margin-top: 1.2rem;
+  
+    text-align: left;
+  }
+  
+  .wish-night__wish-area label {
+    display: block;
+  
+    margin-bottom: 0.5rem;
+  
+    color: rgba(255, 255, 255, 0.65);
+  
+    font-size: 0.85rem;
+  }
+  
+  .wish-night__wish-area textarea {
+    width: 100%;
+    min-height: 105px;
+  
+    resize: none;
+  
+    padding: 1rem 1rem 1.8rem;
+  
+    border: 1px solid rgba(255, 45, 149, 0.3);
+    border-radius: 16px;
+  
+    outline: none;
+  
+    color: white;
+  
+    background: rgba(255, 255, 255, 0.06);
+  
+    font: inherit;
+    line-height: 1.5;
+  
+    box-sizing: border-box;
+  
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .wish-night__wish-area textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+  }
+  
+  .wish-night__wish-area textarea:focus {
+    border-color: rgba(255, 45, 149, 0.7);
+  
+    box-shadow:
+      0 0 25px rgba(255, 45, 149, 0.12);
+  }
+  
+  .wish-night__counter {
+    position: absolute;
+  
+    right: 0.8rem;
+    bottom: 0.6rem;
+  
+    color: rgba(255, 255, 255, 0.35);
+  
+    font-size: 0.7rem;
+  }
+  
+  /* BUTTON */
+  
+  .wish-night__button {
+    margin-top: 1.3rem;
+  
+    padding: 0.9rem 1.8rem;
+  
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+  
+    color: rgba(255, 255, 255, 0.4);
+  
+    background: rgba(255, 255, 255, 0.05);
+  
+    font: inherit;
+    font-weight: 700;
+  
+    cursor: not-allowed;
+  }
+  
+  .wish-night__button--active {
+    color: white;
+  
+    border-color: rgba(255, 45, 149, 0.65);
+  
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 45, 149, 0.3),
+        rgba(180, 74, 255, 0.25)
+      );
+  
+    box-shadow:
+      0 0 25px rgba(255, 45, 149, 0.25);
+  
+    cursor: pointer;
+  
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .wish-night__button--active:hover {
+    transform: translateY(-3px);
+  
+    box-shadow:
+      0 0 35px rgba(255, 45, 149, 0.45);
+  }
+  
+  /* SUCCESS */
+  
+  .wish-night__success-icon {
+    margin-bottom: 1rem;
+  
+    font-size: 4rem;
+  
+    animation: wish-success 1s ease both;
+  }
+  
+  /* CLOSE */
+  
+  .wish-night__close {
+    position: absolute;
+  
+    top: 1rem;
+    right: 1rem;
+  
+    z-index: 50;
+  
+    width: 44px;
+    height: 44px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+  
+    color: white;
+  
+    background: rgba(255, 255, 255, 0.07);
+  
+    font-size: 1.6rem;
+  
+    cursor: pointer;
+  }
+  
+  /* SHOOTING STAR */
+  
+  .wish-night__shooting-star {
+    position: absolute;
+  
+    top: 18%;
+    left: -100px;
+  
+    width: 100px;
+    height: 2px;
+  
+    background: linear-gradient(
+      90deg,
+      transparent,
+      white
+    );
+  
+    transform: rotate(-25deg);
+  
+    animation: shooting-star 7s linear infinite;
+  }
+  
+  /* ANIMATIONS */
+  
+  @keyframes star-twinkle {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(0.8);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.4);
+    }
+  }
+  
+  @keyframes selected-star {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.6);
+    }
+  }
+  
+  @keyframes shooting-star {
+    0% {
+      left: -120px;
+      opacity: 0;
+    }
+  
+    10% {
+      opacity: 1;
+    }
+  
+    25% {
+      left: 110%;
+      opacity: 0;
+    }
+  
+    100% {
+      left: 110%;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes wish-success {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+  
+    70% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* MOBILE */
+  
+  @media (max-width: 600px) {
+    .wish-night__content {
+      padding-top: 14vh;
+    }
+  
+    .wish-night__moon {
+      top: 7%;
+      right: 7%;
+  
+      width: 70px;
+      height: 70px;
+    }
+  
+    .wish-night__moon-shadow {
+      display: none;
+    }
+  
+    .wish-night__wish-area {
+      margin-top: 0.8rem;
+    }
+  
+    .wish-night__wish-area textarea {
+      min-height: 90px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .wish-night__star,
+    .wish-night__shooting-star {
+      animation: none;
+    }
+  }

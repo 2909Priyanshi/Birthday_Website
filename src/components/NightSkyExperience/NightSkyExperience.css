@@ -1,0 +1,265 @@
+.night-sky {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    overflow: hidden;
+  
+    color: #fff;
+  
+    background:
+      radial-gradient(
+        circle at 50% 45%,
+        rgba(120, 70, 255, 0.18),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at 20% 20%,
+        rgba(255, 45, 149, 0.12),
+        transparent 30%
+      ),
+      #03030b;
+  }
+  
+  .night-sky__glow {
+    position: absolute;
+    inset: 0;
+  
+    pointer-events: none;
+  
+    background:
+      radial-gradient(
+        ellipse at center,
+        transparent 20%,
+        rgba(0, 0, 0, 0.55) 100%
+      );
+  }
+  
+  .night-sky__content {
+    position: relative;
+    z-index: 20;
+  
+    width: min(90%, 650px);
+    margin: 0 auto;
+    padding-top: 5rem;
+  
+    text-align: center;
+  }
+  
+  .night-sky__eyebrow {
+    margin: 0 0 0.7rem;
+  
+    color: #ff78bc;
+  
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  
+  .night-sky__title {
+    margin: 0;
+  
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1;
+  
+    text-shadow:
+      0 0 20px rgba(255, 255, 255, 0.25),
+      0 0 45px rgba(180, 74, 255, 0.45);
+  }
+  
+  .night-sky__subtitle {
+    margin: 1rem auto;
+  
+    max-width: 500px;
+  
+    color: rgba(255, 255, 255, 0.65);
+  
+    line-height: 1.7;
+  }
+  
+  .night-sky__stars {
+    position: absolute;
+    inset: 0;
+  
+    z-index: 10;
+  
+    pointer-events: none;
+  }
+  
+  .night-star {
+    position: absolute;
+  
+    width: 44px;
+    height: 44px;
+  
+    padding: 0;
+  
+    border: none;
+    border-radius: 50%;
+  
+    background: transparent;
+  
+    transform: translate(-50%, -50%);
+  
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  
+  .night-star span {
+    position: absolute;
+  
+    top: 50%;
+    left: 50%;
+  
+    width: var(--star-size);
+    height: var(--star-size);
+  
+    border-radius: 50%;
+  
+    background: #fff;
+  
+    box-shadow:
+      0 0 6px #fff,
+      0 0 14px rgba(180, 74, 255, 0.9),
+      0 0 25px rgba(255, 45, 149, 0.65);
+  
+    transform: translate(-50%, -50%);
+  
+    animation: star-twinkle 2.2s ease-in-out infinite;
+    animation-delay: var(--star-delay);
+  
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .night-star:hover span {
+    transform: translate(-50%, -50%) scale(1.8);
+  
+    box-shadow:
+      0 0 10px #fff,
+      0 0 25px rgba(180, 74, 255, 1),
+      0 0 45px rgba(255, 45, 149, 0.9);
+  }
+  
+  .night-star:active span {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  
+  .night-star--selected span {
+    width: 12px;
+    height: 12px;
+  
+    box-shadow:
+      0 0 12px #fff,
+      0 0 30px #ff2d95,
+      0 0 60px #b44aff,
+      0 0 100px rgba(255, 255, 255, 0.8);
+  
+    transform: translate(-50%, -50%) scale(2);
+  }
+  
+  .night-star--still span {
+    animation: none;
+  }
+  
+  .night-sky__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  
+    z-index: 50;
+  
+    width: 44px;
+    height: 44px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+  
+    color: white;
+  
+    background: rgba(255, 255, 255, 0.07);
+  
+    font-size: 1.6rem;
+  
+    cursor: pointer;
+  }
+  
+  .night-sky__hint {
+    position: absolute;
+  
+    bottom: 1.5rem;
+    left: 50%;
+  
+    z-index: 20;
+  
+    margin: 0;
+  
+    color: rgba(255, 255, 255, 0.45);
+  
+    font-size: 0.8rem;
+  
+    transform: translateX(-50%);
+  }
+  
+  .night-sky__wish-icon {
+    margin-bottom: 0.8rem;
+  
+    font-size: 4rem;
+  
+    animation: wish-glow 1.5s ease-in-out infinite alternate;
+  }
+  
+  .night-sky__again {
+    margin-top: 1rem;
+  
+    padding: 0.85rem 1.5rem;
+  
+    border: 1px solid rgba(255, 45, 149, 0.5);
+    border-radius: 999px;
+  
+    color: white;
+  
+    background: rgba(255, 45, 149, 0.15);
+  
+    font: inherit;
+    font-weight: 700;
+  
+    cursor: pointer;
+  }
+  
+  @keyframes star-twinkle {
+    0%,
+    100% {
+      opacity: 0.45;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.25);
+    }
+  }
+  
+  @keyframes wish-glow {
+    from {
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+  
+    to {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .night-sky__content {
+      padding-top: 5rem;
+    }
+  
+    .night-star {
+      width: 52px;
+      height: 52px;
+    }
+  }
